@@ -82,6 +82,7 @@
                    (.put "mail.smtp.host" (or host "not.provided"))
                    (.put "mail.smtp.port" (or port "25"))
                    (.put "mail.smtp.from" (or sender from))
+                   (.put "mail.smtp.starttls.enable" (if port "true" "false"))
                    (.put "mail.smtp.auth" (if user "true" "false")))
            session (or (:session (meta msg))
                        (if user
